@@ -1,0 +1,44 @@
+/*! SASS #style main */
+@charset "UTF-8";
+
+
+@import "./vendors/_fontawesome.scss";
+@import "./vendors/_font.scss";
+
+@import "./themes/_light-style.scss";
+@import "./themes/_dark-style.scss";
+
+@import "./base/_base.scss";
+@import "./base/_reset.scss";
+@import "./base/_typography.scss";
+@import "./base/_grid.scss";
+@import "./base/_boxes.scss";
+@import "./base/_visibility.scss";
+
+
+//@import "./layout/_.scss";
+@import "./layout/_header.scss";
+@import "./layout/_main.scss";
+@import "./layout/_footer.scss";
+
+
+
+@import "./components/_button.scss";
+@import "./components/_checkerboard.scss";
+@import "./components/_slider.scss";
+@import "./components/_modals.scss";
+@import "./components/_tabs.scss";
+@import "./components/_tooltip.scss";
+@import "./components/_menu.scss";
+@import "./components/_scrolltop.scss";
+
+/* with js */
+//@import "./components/_modal.scss";
+//@import "./components/_tabs.scss";
+//@import "./components/_tooltip.scss";
+
+
+//@import "./pages/_formulaire.scss";
+@import "./pages/_home.scss";
+@import "./pages/_histoire.scss";
+@import "./pages/_formation.scss";

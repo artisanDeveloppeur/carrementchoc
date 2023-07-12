@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Concept Bean to Bar - Carrément Choc</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!--
+      Menu d'accessibilité utiliser la tabulation
+    -->
+    <ul class="a11y-nav">
+        <li><a href="#main">Main</a></li>
+    </ul>
+    <header class="header">
+      <div >
+          <a class="header__logo" href="index.html"><img src="./images/carrement-choc.png" alt=""></a>
+      </div>
+      <nav class="menu menu-main menu-burger  m-visible s-visible xs-visible"  id="menu" >
+        <ul class="">
+          <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+          <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+          <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+          <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+        </ul>
+      </nav>
+      <span class="fill" style="width: 0%;"></span>
+
+      <nav class="menu-mobile" >
+        <div class="m-hide l-hide">
+            <div class="menu-slider" id="trigger">
+                <i class="fas fa-bars"> MENU</i>
+            </div>
+            <div id="triggered">
+                <ul class="triggered-link">
+                  <li class="txt-right d-flex flex-just-end"><i class="fas fa-times" id="close"></i></li>
+                  <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+                  <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+                  <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+                  <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+    <main id="main" class="main container-grid">
+      <section class="section__withhook">
+        <h1 class="main__title">Notre Concept</h1>
+        <p>A l'origine du goût, il y a la fève, et tout le travail qui laisse exploser toutes ses saveurs.</p>
+        <p>Tout notre travail repose sur la fève de cacao. De la torréfaction au conchage, ici se trouve la naissance des arômes.</p>  
+        <p>Chacune des manipulations qu’elle subit affecte donc la nature et la qualité du chocolat qui en résulte.</p>
+      </section> 
+      <section class="section__withhook">
+        <h2 class="accroche">Bean to bar - De la féve à la tablette</h2>
+        <div class=" grid grid-noGap duos "> 
+            <div class="duosA col-xl-6 col-l-6 col-m-6">
+                <picture><img src="./images/sac-feve-cacao.png" alt=""/></picture>  
+            </div>
+            <div class="duosB col-xl-6 col-l-6 col-m-6"> 
+                <h3>En route vers le bean to bar...</h3>
+                <p>Les fèves arrivent à l’atelier, où elles vont passer par plusieurs étapes avant de se transformer en chocolat !</p>
+                <p>Partez à l’aventure et découvrez avec nous les terroirs du cacao !</p> 
+                <p><a href="#modal1" class="js-modal">La suite des étapes de fabrication du chocolat</a></p>
+                <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
+                    <div class="modal-wrapper js-modal-stop">
+                        <button class="js-modal-close">Fermer la boite modale</button>
+                        <h4 id="titlemodal">La suite des étapes de fabrication du chocolat</h4>
+                        <picture><img src="./images/bean-to-bar-fr.png"></picture> 
+                    </div>
+                </aside>
+              </div>
+            <div  class="duosC col-xl-6 col-l-6 col-m-6"> 
+                <a href="#" class="tooltip" title="" data-tooltip="#tooltip-beantobar"><h3>De la fève à la tablette <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>
+                  <div style="display:none;" id="tooltip-beantobar">
+                    <h4>Bean-to-bar, de la fève à la tablette.</h4>
+                    <p><img src="./images/chocolat-bean-to-bar.png" style="width:400px;height:200px" alt="" ></p>
+                  </div>
+                </div>
+                <p>Les fèves sont stockées dans un espace dédié, juste à côté de l’atelier.</p>
+                <p>Elles se conservent dans des sacs en toile de jute pesant entre 60 et 70 kg.</p> 
+            </div>
+            <div class="duosD col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/sac-cacao-cuba.png" alt=""/></picture>
+            </div>
+            <div class="duosE col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/torrefaction.png" alt=""/></picture>  
+            </div>
+            <div class="duosF col-xl-6 col-l-6 col-m-6"> 
+                <a href="#" class="tooltip" title="Pas de chocolat sans torréfaction !" data-tooltip="#tooltip-torrefaction"><h3>Torréfaction <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-torrefaction">
+                    <h4>Pas de chocolat sans torréfaction ! </h4>
+                    <p>Après avoir été soigneusement nettoyées, les fèves sont concassées et débarrassées de la coque qui les protège. </p>
+                    <p>Vient alors l’étape importante de la torréfaction qui permettra de révéler les goûts contenus dans les fèves.</p>
+                    <p>La torréfaction consiste à griller les fèves entre 100 et 140 °C pendant une demi-heure.</p>
+                  </div>
+                </div> 
+                <p>L’Art du torréfacteur. L’opération la plus délicate et minutieuse: révéler la personnalité de la fève, amplifier les arômes sans les brûler.</p>
+                <p>Il faut savoir qu’une fève de cacao peut contenir jusqu’à 115 notes aromatiques: acidulée, boisée, fruitée, florale.</p>           
+            </div>            
+            <div class="duosG col-xl-6 col-l-6 col-m-6">
+                <a href="#" class="tooltip" title="Le décorticage et le broyage" data-tooltip="#tooltip-broyage"><h3>Broyage <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-broyage">
+                    <h4>Le décorticage et le broyage</h4>
+                    <p>La prochaine étape consiste à broyer quelque peu les fèves afin de séparer les morceaux de coques et les germes. Grâce à un système de ventilation, les morceaux de coques s’envolent tandis que la fève reste.</p>
+                    <p>Les fèves sont ensuite broyées afin d’obtenir ce que l’on appelle la masse de cacao. La masse de cacao contient naturellement de la matière grasse.</p>
+                    <p>Afin de l’extraire, il est nécessaire de compresser cette masse. On obtient de l’huile qui se transforme en beurre une fois coagulé, mais aussi un tourteau en forme de galette qui servira à fabriquer du cacao en poudre.</p>
+                  </div>
+                </div> 
+                <p>C'est le fait d’écraser lentement une fève de cacao torréfiée avec le sucre pour obtenir une pâte la plus lisse possible avec un grain de 25 microns</p>
+                <p>Anecdote : si vous prenez de la cannelle, du poivre et que vous l’écrasez au maximum, il s’en dégagera énormément d’arômes. Voilà le but du broyage.</p>      
+            </div>    
+            <div class="duosH col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/broyage.png" alt=""/></picture> 
+            </div>
+            <div class="duosI col-xl-6 col-l-6 col-m-6">
+              <picture><img src="./images/conchage.png" alt=""/></picture>  
+            </div>
+            <div  class="duosJ col-xl-6 col-l-6 col-m-6"> 
+                <a href="#" class="tooltip" title="Le malaxage et  le conchage" data-tooltip="#tooltip-conchage"><h3>Conchage <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-conchage">
+                    <h4>Le malaxage et  le conchage</h4>
+                    <p>Encore très amer, il est nécessaire d’ajouter du sucre à la masse de cacao afin d’enfin obtenir notre chocolat. </p>
+                    <p>Cette étape s’appelle le malaxage : les autres matières premières sont ajoutées et sont malaxées pendant environ 20 h afin d’obtenir une pâte homogène.</p>
+                    <p>L’avant-dernière étape afin d’obtenir le chocolat tel qu’on le connaît aujourd’hui est appelée le conchage. Après avoir rajouté du beurre de cacao à la pâte pour plus d’onctuosité, la pâte est constamment agitée afin d’éliminer l’amertume du chocolat.</p>
+                  </div>
+                </div> 
+                <p>Chez nous, le conchage artisanal permet à la pâte de chocolat de gagner en onctuosité, en fluidité et en finesse.</p>
+                <p>Cette étape dure, selon l’origine des fèves de cacao ou du type de chocolat, entre 18 et 48 heures. </p>  
+            </div>
+            <div class="duosK col-xl-6 col-l-6 col-m-6"> 
+                <a href="#" class="tooltip" title="Le tempérage et l’enrobage" data-tooltip="#tooltip-confection"><h3>Confection <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-confection">
+                    <h4>Le tempérage et l’enrobage</h4>
+                    <p>Afin d’obtenir un chocolat cassant et lisse, il est nécessaire de le tempérer c’est-à-dire de maintenir sa température à 32 °C afin d’effectuer le moulage et l’enrobage. </p>
+                    <p>Et voilà : le chocolat est prêt à être dégusté !</p>
+                    <p></p>
+                  </div>
+                </div>   
+                <p>La couverture de chocolat va être cristallisée (stabiliser le beurre de cacao contenu dans la fève) à des températures entre 28 et 32°C en fonction des couvertures de chocolat.</p>
+                <p>Il sera coulé dans le moule emblématique de la Maison. Le Goût au Carré² est né !</p>     
+            </div>
+            <div class="duosL col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/confection.png" alt=""/></picture>
+            </div>
+        </div>
+      </section>
+    </main>
+    <section class="banniere__container top-banner-section" >
+      <span class="banner-text-div">
+        <p ><a href="nos-planteurs-et-leurs-plantations.html">Nos planteurs et leurs plantations</a></p>
+      </span> 
+      <picture class="banner-image-div"><img  class="banner-image" src="./images/banniere-bean-to-bar.png" alt=""/></picture>
+    </section>
+    <footer class="footer__container ">
+        
+      <section class="footer__bottom grid">
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+              <h4>carrément choc</h4>
+              <nav>
+                <ul>
+                  <li><a href="notre-histoire.html">notre histoire</a></li>
+                  <li><a href="nos-chocolats-degustations.html">nos chocolats</a></li>
+                  <li><a href="notre-savoir-faire.html">notre savoir faire</a></li>
+                  <li><a href="notre-concept-bean-to-bar.html">notre concept</a></li>
+                  <li><a href="nos-planteurs-et-leurs-plantations.html">nos planteurs</a></li>
+                  <li><a href="#">notre engagement</a></li>
+                  <li><a href="#">nos partenaires</a></li>
+              </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>notre école</h4>
+            <nav>
+              <ul>
+                <li><a href="notre-ecole-chocolat.html">la chocolatologie</a></li>
+                <li><a href="academie-carrement-choc.html">amateur</a></li>
+                <li><a href="masterclass-carrement-choc.html">professionnel</a></li>
+                <li><a href="#">team building</a></li>
+                <li><a href="#">corporate</a></li>
+                <li><a href="#">portraits des chefs</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+                <!--
+                <li><a href="#">lexique chocolat</a></li>
+                --> 
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>nos artisans</h4>
+            <nav>
+              <ul>
+                <li><a href="artisans-certifies.html#boulangerie">boulangerie</a></li>
+                <li><a href="artisans-certifies.html#viennoiserie">viennoiserie</a></li>
+                <li><a href="artisans-certifies.html#tarterie">tarterie</a></li>
+                <li><a href="artisans-certifies.html#patisserie">pâtisserie</a></li>
+                <li><a href="artisans-certifies.html#biscuiterie">biscuiterie</a></li>
+                <li><a href="artisans-certifies.html#glacerie">glacerie</a></li>
+                <li><a href="trouver-artisan-certifie.html">trouver un artisan</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!--
+          <div class="col-xl-2 col-l-6 col-m-6">
+            <h4>corporate</h4>
+            <nav>
+              <ul>
+                <li><a href="#">cadeaux d'entreprises</a></li>
+                <li><a href="#">événements</a></li>
+                <li><a href="#">distribution horeca</a></li>
+                <li><a href="#">revendeurs</a></li>
+                <li><a href="#">personnalisation</a></li>
+                <li><a href="#">projets sur mesure</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+              </ul>
+            </nav>
+          </div>
+          footer__informations col-xl-4 col-l-12 col-m-12"
+          class=" footer__informations col-xl-3 col-l-12 col-m-12"
+          -->
+          <div class=" footer__informations col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>informations</h4>
+            <nav>
+              <ul>
+                <li><a href="#"><i class="fa-solid fa-house-chimney"></i>carrément choc</a></li>
+                <li><a href="#"><i class="fa-solid fa-location-dot"></i>Atelier, Rue de (ville)</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar"></i>Ouvert de mardi au samedi </a></li>
+                <li><a href="#"><i class="fa-solid fa-clock"></i>Horaire, de 9h à 18h</a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i>+32 (0)123 45 67 89</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i>Contactez-nous</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i>BE 9876.543.210</a></li>
+              </ul>
+            </nav>
+          </div>
+      </section>
+  </footer>
+  <scroll-top class="scroll-top" style="display: grid;">
+    <svg width="100%" height="100%" viewBox="0 0 7 5" xmlns="http://www.w3.org/2000/svg" style="stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5; fill: none;">
+      <path d="M1,4l2.5,-3l2.5,3" stroke="#FFF" stroke-width="1.4"></path>
+    </svg>
+  </scroll-top>
+  <script src="./scripts/menu.js"></script>
+  <script src="./scripts/scrolltop.js"></script>
+  <script src="scripts/modals.js"> </script>
+  <script src="scripts/tooltip.js"> </script>
+</body>
+</html>

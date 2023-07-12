@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carrément Choc - Nos artisans</title>
+  <!--
+  https://developers.google.com/maps/documentation/javascript/examples/overlay-hideshow
+  -->
+  <meta charset="UTF-8">
+ <style>
+
+            body {
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                line-height: 1.4;
+                color: #4a4a4a
+            }
+
+            h1,h2,h3,h4,h5,h6 {
+                color: #000
+            }
+
+            .item {
+                cursor: pointer;
+                margin-bottom: 2rem;
+                transition: box-shadow .3s;
+                padding: 0 20px
+            }
+
+            .item:hover() {
+                box-shadow: 0 0 10px rgba(0,0,0,.1);
+                background-color: #fff
+            }
+
+            .item h4 {
+                margin: 1rem 0 .5rem
+            }
+
+            .item p {
+                margin: 0 0 1rem
+            }
+
+            .item img {
+                /*width: calc(100% + 40px);*/
+                width:calc(100% - 150px);
+                /*margin-left: -20px;*/
+                display: block
+            }
+
+            .map {
+                height: 100vh
+            }
+            
+            @media only screen and (min-width: 1100px) {
+                .container {
+                    display:grid;
+                    grid-template-columns: 3fr 5fr
+                    /*grid-template-columns: 7fr 4fr*/
+
+                }
+
+                .list {
+                    display: grid;
+                    grid-template-columns: repeat(1,1fr);
+                    grid-column-gap: 30px;
+                    padding: 0 30px
+                }
+
+                .map {
+                    background-color: #CCC;
+                    position: sticky!important;
+                    top: 0;
+                    right: 0;
+                    left: 0
+                }
+            }
+            
+            .marker{
+                transform: translate(-50%, calc(-100% - 10px));
+                white-space: nowrap;
+                padding :5px 10px;
+                font-weight: bold;
+               /*
+                width:150px;
+                height:40px;
+                margin-top: -50px;
+                margin-left: -75px;
+                line-height: 40px;
+               */
+                text-align: center;
+                background-color: #FFF;
+                box-shadow: 0 0 10px rgba(0,0,0,.3);
+            }
+            .marker::after{
+                content:'';
+                position:absolute;
+                top:100%;
+                left:50%;
+                width:0;
+                height:0;
+                margin-left:-8px;
+                border-left:8px solid transparent;
+                border-right:8px solid transparent;
+                border-top:8px solid #FFF;
+                
+            }
+            
+            .marker.is-active{
+                background-color: #5069ff;
+                color:#FFF;
+                z-index: 300;
+            }
+            .marker.is-active::after{
+                border-top-color: #5069ff;
+            }
+            
+            .nos-artisans img {
+              width:200px;
+
+            }
+
+            hr{
+              width: 100%;
+              border:1px solid rgb(223, 217, 217);
+              margin-block: 0 1rem;
+            }
+
+            .gm-style img {
+                max-width: none;
+                width: 200px;
+            }
+
+            #filter-search{
+                height:50px;
+                width: 100%;
+            }
+        </style>
+</head>
+<body>
+
+<h1 style="padding-left: 30px;">Liste de nos artisans certifiés</h1>
+
+<div class="container">
+
+  <div class="list nos-artisans">
+        <!-- (A) SEARCH BOX -->
+    <div>
+        <label>Recherchez un des nos artisans certifiés</label>
+        <input type="text" id="filter-search" placeholder="Recherchez un des nos artisans certifiés..." autocomplete="off" />
+    </div>
+
+    <!-- (B) LIST OF ITEMS -->
+        <div filter-value="patisserie vegan" class="item js-marker" data-lat="50.65655" data-lng="5.57057" data-name="La Pâtisserie Vegan" >
+          <img src="./patisserie-vegan.png" alt="">
+          <h4>La Pâtisserie Vegan</h4>
+          <p>Spécialités: des produits 100% végétaux</p>
+          <p>Rue Sainte-Walburge 107, 4000 Liège, Belgique</p>
+          <p><a href="https://lapatisserievegan.be/" target="_blank">Site internet</a></p>
+        </div>
+        <div filter-value="gaufrette saperlipopette" class="item js-marker" data-lat="50.6463452" data-lng="5.5766487" data-name="Une gaufrette saperlipopette" >
+          <img src="./gaufrette-saperlipopette.png" alt="">
+          <h4>Une gaufrette saperlipopette</h4>
+          <p>Gourmandises fabriqués à base de farines locales et de produits en circuit court</p>
+          <p>Rue des Airs 1, 4000 Liège, Belgique</p>
+          <p><a href="https://une-gaufrette-saperlipopette.be/" target="_blank">Site internet</a></p>
+        </div>
+        <div filter-value="pain en avant" class="item js-marker" data-lat="50.598293" data-lng="5.3446818" data-name="Un pain en avant" >
+          <img src="./logo-un-pain-en-avant.svg" alt="">
+          <h4>Un pain en avant</h4>
+          <p>Boulangerie artisanale bio : pains au levain naturel | Recettes sans gluten</p>
+          <p>Chaussée Verte 89, 4470 Saint-Georges-sur-Meuse</p>
+          <p><a href="https://www.unpainenavant.com/" target="_blank">Site internet</a></p>
+        </div>
+        <div filter-value="glacier hugo" class="item js-marker" data-lat="50.7163509" data-lng="5.6950726" data-name="Le Glacier Hugo" >
+            <img src="./glacier-hugo.png" alt="">
+            <h4>Le Glacier Hugo</h4>
+            <p>Depuis 1930 le glacier Hugo perpétue la tradition des saveurs naturelles.</p>
+            <p>Rue de Richelle 96, 4600 Richelle</p>
+            <p><a href="https://glacierhugo.be/fr" target="_blank">Site internet</a></p>
+        </div>
+        <div filter-value="patisserie patachou" class="item js-marker" data-lat="50.6933993" data-lng="5.531257" data-name="La pâtisserie Patachou" >
+            <img src="./patisserie-patachou.png" alt="">
+            <h4>La pâtisserie Patachou</h4>
+            <p>Produits de qualité avec des matières premières nobles : pur beurre «baratte», chocolat supérieur </p>
+            <p>Rue des Acacias, 4450 Lantin, Belgique</p>
+            <p><a href="https://patachoupatisserie.be/fr" target="_blank">Site internet</a></p>
+        </div>
+
+        <!--
+
+        <div class="item js-marker" data-lat="" data-lng="" data-name="" >
+          <img src="" alt="">
+          <h4></h4>
+          <p></p>
+          <p></p>
+          <p><a href="">Site internet</a></p>          
+        </div>
+        -->
+  
+  </div>
+
+  <div class="map" id="map"></div>
+
+</div>
+<script src="vendor.js"></script>
+<script>
+   // $ convention variable {HTMLElement} element
+   let $map = document.querySelector('#map')
+   
+   class GoogleMap{
+       constructor(){
+           this.map = null
+           this.bounds = null
+           this.textMarker = null
+       }
+       /**
+        * Charge la carte sur un élément
+        * @param {HTMLElement} element
+        */
+       async load(element){
+           
+           //Uncaught (in promise) ReferenceError: google is not defined
+
+           // ?key=AIzaSyCuTilAfnGfkZtIx0T3qf-eOmWZ_N2LpoY
+
+            return new Promise((resolve, reject) => {
+                $script('https://maps.googleapis.com/maps/api/js', () =>{
+                    this.textMarker = class TextMarker extends google.maps.OverlayView {
+
+                        constructor (pos, map, text) {
+                            super()
+                            this.div = null
+                            this.html = null
+                            this.pos = pos
+                            this.text = text
+                            this.setMap(map)
+                            this.onActivation = []
+                        }
+
+                        onAdd () {
+                            this.div = document.createElement('div')
+                            this.div.classList.add('marker')
+                            this.div.style.position = 'absolute'
+                            this.div.innerHTML = this.text
+                            this.getPanes().overlayImage.appendChild(this.div)
+                            this.div.addEventListener('click', (e) =>{
+                                e.preventDefault()
+                                e.stopPropagation()
+                                this.activate()
+                            })
+                        }
+
+                        draw () {
+                            let position = this.getProjection().fromLatLngToDivPixel(this.pos)
+                            this.div.style.left = position.x + "px"
+                            this.div.style.top = position.y + "px"
+                        }
+
+                        onRemove () {
+                            this.div.parentNode.removeChild(this.div)
+                        }
+                        
+                        hover(){
+                            if(this.div !== null){
+                                this.div.classList.add('is-active')
+                            }
+                        }
+                        out(){
+                            if(this.div !== null){
+                                this.div.classList.remove('is-active')
+                            }
+                        }
+                        activate(){
+                            if(this.div !== null){
+                                this.div.innerHTML = this.html
+                            }
+                            this.onActivation.forEach(function(cb){cb()})
+
+                        }
+                        deactivate(){
+                            if(this.div !== null){
+                                this.div.innerHTML = this.text
+                            }
+                        } 
+                        setContent(html){
+                            this.html = html
+                        }
+                    }
+                    this.map = new google.maps.Map(element)
+                    //https://developers.google.com/maps/documentation/javascript/reference/3/coordinates#LatLngBounds
+                    this.bounds = new google.maps.LatLngBounds()
+                    resolve()
+                })                
+            })
+
+       }
+       
+       /**
+        * Ajoute un marker sur la carte
+        * @param {string} lat
+        * @param {string} lng
+        * @param {string} text
+        * @@returns {TextMarker}  
+        */
+       addMarker(lat,lng,text){
+            let point = new google.maps.LatLng(lat,lng)
+            //https://www.grafikart.fr/tutoriels/javascript/google-maps-marker-personnalise-1005
+            let marker = new this.textMarker(point,this.map,text)
+            /*
+            let marker = new google.maps.Marker({
+            // InvalidValueError: setPosition: not a LatLng or LatLngLiteral: in property lat: not a number
+            position: point,
+            map: this.map
+            })
+            */
+            marker.onActivation.push(() =>{
+                this.map.setCenter(marker.pos)
+            })
+            this.bounds.extend(point)
+            return marker
+       }
+       
+       /**
+        * Centre la carte pour englober les markers
+        */
+       centerMap(){
+           // déplacer + zoomer
+           this.map.panToBounds(this.bounds)
+           this.map.fitBounds(this.bounds)
+           
+       }
+   }
+   
+   const initMap = async function(){
+       let map = new GoogleMap()
+       let activeMarker = null
+       let enabledMarker = null
+       await map.load($map)
+       Array.from(document.querySelectorAll('.item')).forEach(function(item){
+                //let marker = map.addMarker(item.dataset.lat, item.dataset.lng, item.dataset.price + ' €')
+                let marker = map.addMarker(item.dataset.lat, item.dataset.lng, item.dataset.name)
+
+                marker.setContent(item.innerHTML)
+                marker.onActivation.push(function(){
+                    if(enabledMarker != null){
+                        enabledMarker.deactivate()
+                    }
+                    enabledMarker = marker
+                })
+                item.addEventListener('mouseover', function(){
+                    marker.hover()
+                    if(activeMarker != null){
+                        activeMarker.out()
+                    }
+                    activeMarker = marker
+                })
+                item.addEventListener('mouseleave', function(){
+                    if(activeMarker === marker){
+                        marker.out()
+                        activeMarker = null
+                    }
+                    
+                })
+       })
+       map.centerMap()
+   } 
+    if($map !== null){
+        initMap()
+        /*
+        let map = new GoogleMap() 
+        map.load($map).then(function(){
+            Array.from(document.querySelectorAll('.js-marker')).forEach(function(item){
+                map.addMarker(item.dataset.lat, item.dataset.lng, item.dataset.price + ' €')
+            })            
+        })
+        */
+   }
+</script>
+<script>
+    window.addEventListener("load", () => {
+    // (A) GET HTML ELEMENTS
+        /*****
+NOTE: This is just a minified sample, for full code, visit: https://github.com/alexerlandsson/search-filter.js
+*****/
+
+let inputId 	= 'filter-search';
+let itemsData 	= 'filter-value';
+let displaySet = false;
+let displayArr = [];
+
+function getDisplayType(element) {
+	let elementStyle = element.currentStyle || window.getComputedStyle(element, "");
+	return elementStyle.display;
+}
+
+document.getElementById(inputId).onkeyup = function() {
+	let searchVal = this.value.toLowerCase();
+	let filterItems = document.querySelectorAll('[' + itemsData + ']');
+
+	for(var i = 0; i < filterItems.length; i++) {
+		if (!displaySet) {
+			displayArr.push(getDisplayType(filterItems[i]));
+		}
+
+		filterItems[i].style.display = 'none';
+
+		if(filterItems[i].getAttribute('filter-value').indexOf(searchVal) >= 0) {
+			filterItems[i].style.display = displayArr[i];		
+		}
+	}
+	
+	displaySet = true;
+}
+    });
+</script>
+
+</body>
+</html>

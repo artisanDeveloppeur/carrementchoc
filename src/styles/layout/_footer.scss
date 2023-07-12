@@ -1,0 +1,99 @@
+.footer {
+
+  &__container {
+    background: #fff9f5;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5rem;
+    display: none;
+
+  }
+
+  &__bottom {
+    justify-content: center;
+    align-content: center;
+    margin-inline: 6rem;
+
+    div {
+      //justify-self: center;
+      //border: 1px solid white;
+      justify-content: center;
+      align-items: center;
+      display: grid;
+    }
+
+    h4 {
+      text-transform: uppercase;
+
+    }
+
+    .footer__informations {
+      //padding-left: 5rem;
+    }
+
+    div:not(.footer__informations) {
+      //width: 10rem;
+
+
+    }
+
+    div:not(.footer__informations) h4 {
+      //width: 10rem;
+      //width: 150px;
+    }
+
+    nav {}
+
+    nav ul {}
+
+    nav ul li {}
+
+    nav ul a {
+      color: #462425;
+      margin-block: 0.5rem;
+      display: inline-block;
+      text-transform: capitalize;
+    }
+
+    nav ul a i {
+      margin-inline: 0.5rem;
+    }
+  }
+
+}
+
+.form {
+  margin-block: 1em;
+}
+
+.social {}
+
+
+.footer__informations a {
+  text-decoration: none;
+  cursor: initial;
+
+}
+
+/*
+<div class="footer__top grid">
+          <form class="form col-xl-6">
+              <div class="form__field">
+                <label for="email-newsletter">croquez notre newsletter</label>
+                <p>Inscrivez-vous à notre newsletter  pour recevoir toute notre actualité. 
+                  En vous abonnant vous acceptez la politique de confidentialité</p> 
+                <input  type="email" id="email-newsletter" name="email-newsletter"> 
+              </div>
+          </form>
+          <div class="social col-xl-6">
+              <p>nous suivre 
+                <a href="#"><i class="fa-brands fa-facebook-f" style="color: #dfe0e2;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="color: #dfe0e2;"></i></a>
+              </p>
+          </div>
+        </div> 
+*/

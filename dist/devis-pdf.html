@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un devis pdf - Carrément Choc</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./styles/style.css">
+  <style>
+  body {
+    padding: 10px;
+  }
+  * {
+    background-color: #fff;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  h2 {
+    margin-top: 40px;
+  }
+  
+  .form {
+    padding: 20px;
+  }
+  .form .title {
+  }
+  .form .row:nth-child(even) {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: #ccc thin solid;
+  }
+
+
+ select option  {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+    color: fieldtext !important;
+}
+
+.message-devis{
+  content:"";
+  clear: both;
+  padding-top: 20px;
+}
+
+strong{
+  background-color: initial;
+
+}
+
+.message-devis{
+}
+
+.error {
+  color:red;
+}
+
+.form-group{
+  display: grid;
+
+}
+input.form__input:valid {
+  border-bottom: 2px solid green;
+  color: green;
+  background: url("./images/svg/form-valid.svg") no-repeat 95% 50%;
+  box-shadow: inset 0 -2px 0 -1px transparent;
+  padding: 0.75rem;
+}
+
+input.form__input:focus:invalid {
+  border-bottom: 2px solid red;
+  color: red;
+  background: url("./images/svg/form-error.svg") no-repeat 95% 50%;
+  box-shadow: inset 0 -2px 0 -1px transparent;
+  padding: 0.75rem;
+
+
+}
+
+label {
+  order: -1;
+  /*opacity: 0;*/
+}
+
+.wrapper-form input:not(:-moz-placeholder-shown):invalid ~ .form__requirements {
+  color: red;
+}
+.wrapper-form input:not(:placeholder-shown):invalid ~ .form__requirements {
+  color: red;
+}
+.wrapper-form input:not(:-moz-placeholder-shown):not(:focus):invalid ~ label {
+  color: red;
+}
+.wrapper-form input:not(:placeholder-shown):not(:focus):invalid ~ label {
+  
+  opacity: 1;
+}
+.wrapper-form input:not(:focus):invalid {
+  color: grey;
+}
+.wrapper-form input:valid {
+  color: green;
+}
+.wrapper-form input:invalid {
+  color: red;
+}
+.wrapper-form input:focus::-moz-placeholder {
+  color: transparent;
+}
+.wrapper-form input:focus::placeholder {
+  color: transparent;
+}
+.wrapper-form input:focus ~ label {
+  color: grey;
+}
+
+/**/
+
+.wrapper-form select:not(:-moz-placeholder-shown):invalid ~ .form__requirements {
+  color: red;
+}
+.wrapper-form select:not(:placeholder-shown):invalid ~ .form__requirements {
+  color: red;
+}
+.wrapper-form select:not(:-moz-placeholder-shown):not(:focus):invalid ~ label {
+  color: red;
+}
+.wrapper-form select:not(:placeholder-shown):not(:focus):invalid ~ label {
+  opacity: 1;
+}
+.wrapper-form select:not(:focus):invalid {
+  color: grey;
+}
+.wrapper-form select:valid {
+}
+.wrapper-form select:invalid {
+}
+.wrapper-form select:focus::-moz-placeholder {
+  color: transparent;
+}
+.wrapper-form select:focus::placeholder {
+  color: transparent;
+}
+/**/
+
+::-moz-placeholder {
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+::placeholder {
+  transition: all 0.4s;
+}
+  </style>
+  
+</head>
+<!--
+  https://codepen.io/Lighty_46/pen/gpLZWx
+-->
+<body>
+
+     <!--
+      Menu d'accessibilité utiliser la tabulation
+    -->
+    <ul class="a11y-nav">
+      <li><a href="#main">Main</a></li>
+  </ul>
+  <header class="header">
+      <div >
+          <a class="header__logo" href="index.html"><img src="./images/carrement-choc.png" alt=""></a>
+      </div>
+  </header> 
+ <!--
+
+ --> 
+  <div class="container form" id="form">
+    <div class="row title hidden-print">
+      <div class="col-sm-12">
+        <h1>Demander une tarification</h1>
+        <p>Vous souhaitez découvrir nos formations plus en détail ou encore connaître nos tarifs ?</p>
+        <p>Remplissez ce formulaire de devis, validez l’envoi. Un commercial dédié vous contactera dans les meilleurs délais.</p>
+        <p>Notre équipe vous proposera l’offre la plus adaptée en fonction de vos besoins et de votre budget.
+      </div>
+
+    </div>
+    <div >
+      <div class="row title">
+        <div class="col-sm-12">
+          <h2>Demander un devis</h2>
+        </div>
+      </div>
+      <form class="wrapper-form" method="post" action="">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input id="nom" required type="text" class="form-control form__input"/>
+              <label>Nom * <span class="error requiredNom"></span></label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input  id="prenom" required type="text" class="form-control form__input"/>
+              <label>Prénom * <span class="error requiredPrenom"></span></label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input id="email" required type="email" class="form-control form__input"/>
+              <label>Email * <span class="error requiredEmail"></span></label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input id="telephone" required type="tel" class="form-control form__input"/>
+              <label>Téléphone * <span class="error requiredTelephone"></span></label>
+            </div>
+            <div class="col-sm-12 form-group">
+              <input  id="adresse" required type="text" class="form-control form__input"/>
+              <label>Adresse complète * <span class="error requiredAdresse"></span></label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <input  id="ville" required type="text" class="form-control form__input"/>
+              <label>Ville * <span class="error requiredVille"></span></label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <input  id="cp" required type="text" class="form-control form__input"/>
+              <label>CP * <span class="error requiredCP"></span></label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <!--
+              <input id="pays" type="text" class="form-control"/>
+              -->
+              <select id="pays" required class="form-control form__input">
+                <option selected >Choisir un pays</option>
+                <option value="Belgique">Belgique</option>
+                <option value="France">France</option>
+              </select>
+              <label>Pays * <span class="error requiredPays"></span></label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <select  id="typesFormations" name="typesFormations" required class="form-control form__input">
+                <option value="" disabled selected>Sélectionner le type de formation</option>
+                <option value="Amateur">Amateur</option>
+                <option value="Professionnel">Professionnel</option>
+                <option value="TeamBuilding">TeamBuilding</option>
+              </select>
+              <label>Formations * <span class="error requiredFormations"></span></label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <select id="choicesFormations" required class="form-control form__input">
+                <option value="" disabled selected>Sélectionner une option</option>
+              </select>
+              <label>Choix possibles * <span class="error requiredChoixFormations"></span></label>
+            </div>
+            <div class="col-sm-12 form-group" style="display: none;">
+              <textarea id="descriptionsFormations" class="form-control"></textarea>  
+              <label>Description des formations</label>
+            </div>
+            <div class="col-sm-6 form-group" style="">
+              <select id="prixFormations" required class="form-control form__input">
+                <option value="" disabled selected>Sélectionner une option</option>
+              </select>        
+              <label>Prix des formations * </label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input id="participants" required type="number" min="1" max="8" class="form-control form__input"/>
+              <label>Nombres de particpants * (min 1 max 8) <span class="error requiredParticipants"></span></label>
+            </div>
+          
+          </div>
+          <div class="col-sm-12 text-center">
+            <a class="btn btn-warning" id="apercu">Aperçu Prix</a>
+            <a class="btn btn-success" id="exportForm">Générer un devis</a>
+          </div>
+          <div class="message-devis">
+            <div class="alert alert-success">
+              <strong class="message-devis-success">Success!</strong>
+            </div>
+            
+            <div class="alert alert-info">
+              <strong class="message-devis-info">Info!</strong>
+            </div>
+            
+            <div class="alert alert-warning">
+              <strong class="message-devis-warning">Warning!</strong>
+            </div>
+            
+            <div class="alert alert-danger">
+              <strong class="message-devis-danger">Danger!</strong>
+            </div>
+          </div> 
+          <div>
+      </form>
+      </div>
+    </div>
+    <div id="first-page">
+    <table width="100%">
+      <tbody style="font-family:arial">
+        <tr>
+          <td width="75%">
+          <table>
+            <tbody>
+              <tr>
+                <td><img src="./images/carrement-choc.png" alt=""></td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+          <td width="25%">
+          <table>
+            <tbody>
+              <tr>
+                <td><strong><nobr>Devis : numéroFacture </nobr></strong></td>
+              </tr>
+              <tr>
+                <td><nobr>Date du : <span class="date-now-js">{{now}}</span></nobr></td>
+              </tr>
+              <tr>
+                <td>Date de validité : <span class="date-now-js">{{now}}</span></td>
+              </tr>
+              <tr>
+                <td>Réf. Client : nouveauClient</td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>&nbsp;</p>
+    
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="60%">
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>Carrément Choc - Ecole de chocolat</strong></td>
+              </tr>
+              <tr>
+                <td>Rue de Liège, 100</td>
+              </tr>
+              <tr>
+                <td>4000 Liège</td>
+              </tr>
+              <tr>
+                <td>Belgique</td>
+              </tr>
+              <tr>
+                <td>+32123456789</td>
+              </tr>
+              <tr>
+                <td>carrement-choc@devis.com</td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+          <td width="40%">
+          <table>
+            <tbody>
+              <tr>
+                <td><span id="factureNom">{{Nom}}</span> <span> </span> <span id="facturePrenom">{{Prénom}}</span></td>
+              </tr>
+              <tr>
+                <td><span id="factureAdresse">{{Adresse}}</span></td>
+              </tr>
+              <tr>
+                <td><span id="factureVille">{{Ville}}</span> <span> </span><span id="factureCodePostale">{{Code postale}}</span></td>
+              </tr>
+              <tr>
+                <td><span id="facturePays">{{Pays}}</span></td>
+              </tr>
+              <tr>
+                <td><span id="factureTelephone">{{Téléphone}}</span></td>
+              </tr>
+              <tr>
+                <td><span id="factureEmail">{{Email}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>&nbsp;</p>
+    
+    <p>&nbsp;</p>
+    <table>
+      <tr>
+        <td><strong>Objet / Devis pour la formation : <nobr><span id="factureFormation">{{Formation sélectionnée}}</span>  / avec <span class="factureQuantite"></span> participants</nobr></strong></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    
+    <p>&nbsp;</p>
+    <table style="border-collapse: collapse;" width="100%">
+      <thead>
+        <tr>
+          <th style="text-align:left border-bottom-width: 1px; border-bottom-style: solid;"><strong>Description</strong></th>
+          <th style="text-align:left border-bottom-width: 1px; border-bottom-style: solid;"><strong>Qt&eacute; (nombre de participants)</strong></th>
+          <th style="text-align:left border-bottom-width: 1px; border-bottom-style: solid;"><strong>PU HT (par personnes)</strong></th>
+          <th style="text-align:left border-bottom-width: 1px; border-bottom-style: solid;"><strong>TVA</strong></th>
+          <th style="text-align:left border-bottom-width: 1px; border-bottom-style: solid;"><strong>Total HT</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid; border-left-width: 1px; border-left-style: solid;"></td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td style="padding:10px;border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid; border-left-width: 1px; border-left-style: solid;"><span class="nomFormation">{{$PRODUCTNAME$}}</span></td>
+          <td style="padding:10px;border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;"><span id="factureParticipant" class="quantiteFormations">{{$PRODUCTQUANTITY$}}</td>
+          <td style="padding:10px;border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;"><span class="prixFormations">{{$PRODUCTLISTPRICE$}}</td>
+          <td style="padding:10px;border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">21%</td>
+          <td style="padding:10px;border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;" id="factureProduct" class="montantSansLaTva">{{$PRODUCTTOTAL$}}</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="padding:10px;border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid; border-left-width: 1px; border-left-style: solid;"><span class="descriptionsFormations">{{$PRODUCTDESCRIPTION$}}</span>
+          </td>        
+        </tr>
+        <tr>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid; border-left-width: 1px; border-left-style: solid;"></td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+          <td style="border-bottom-width: 1px; border-bottom-style: solid;border-right-width: 1px;border-right-style: solid;">&nbsp;</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><strong>Total net HT</strong></td>
+          <td>&nbsp;</td>
+          <td><strong class="montantSansLaTva">{{$TOTALWITHOUTVAT$}}</strong></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>TVA 21.00</td>
+          <td>&nbsp;</td>
+          <td class="montantTva">{{$SHTAXAMOUNT$}}</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><strong>Montant total TTC</strong></td>
+          <td>&nbsp;</td>
+          <td><strong class="montantAvecTva">{{$TOTAL$}}</strong></td>
+        </tr>
+      </tfoot>
+    </table> 
+    <p>&nbsp;</p>
+    
+    <p>&nbsp;</p>
+    <table width="100%">
+      <tbody style="font-family:arial">
+        <tr>
+          <td width="25%">
+            <table>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>          
+         </tr>
+         <tr> 
+          <td width="50%" >
+            <table style="text-align: center;">
+              <tbody>
+                <tr>
+                  <td> Carrément Choc - Ecole de chocolat&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+            <table style="text-align: center;">
+              <tbody>
+                <tr>
+                  <td> TVA BE 9876.543.210&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+            <table style="text-align: center;">
+              <tbody>
+                <tr>
+                  <td> Rue de Liège, 100&nbsp;</td>
+                  <td> 4000 Liège&nbsp;</td>
+                  <td> Belgique&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          </tr>
+          <tr>
+          <td width="25%">
+            <table>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+  </div>
+  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js'></script>
+<script id="rendered-js" >
+
+let today = new Date();
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let yyyy = today.getFullYear();
+
+today = dd + '/' + mm + '/' + yyyy;
+
+$(".date-now-js").text(today)
+
+$("#nom" ).on("keyup",function() {
+    let valueNom = $( this ).val();
+    $("#factureNom").text(valueNom);
+})
+$("#prenom" ).on("keyup",function() {
+    let valuePrenom = $( this ).val();
+    $("#facturePrenom" ).text(valuePrenom);
+})
+$("#email" ).on("keyup",function() {
+    let valueEmail = $( this ).val();
+    $("#factureEmail" ).text(valueEmail);
+})
+$("#telephone" ).on("keyup",function() {
+    let valueTelephone = $( this ).val();
+    $("#factureTelephone" ).text(valueTelephone);
+})
+
+$("#adresse" ).on("keyup",function() {
+    let valueAdresse = $( this ).val();
+    $("#factureAdresse" ).text(valueAdresse);
+})
+$("#ville" ).on("keyup",function() {
+    let valueVille = $( this ).val();
+    $("#factureVille" ).text(valueVille);
+})
+$("#cp" ).on("keyup",function() {
+    let valueCP = $( this ).val();
+    $("#factureCodePostale" ).text(valueCP);
+})
+$("#pays").on("change",function() {
+    let valuePays = $( this ).val();
+    $("#facturePays" ).text(valuePays);
+})
+
+let lookup = {
+   'Amateur': ['Sélectionner une option', 'Amateur - Choice 1', 'Amateur - Choice 2', 'Amateur - Choice 3'],
+   'Professionnel': ['Sélectionner une option','Professionnel - Choice 1', 'Professionnel - Choice 2'],
+   'TeamBuilding': ['Sélectionner une option','TeamBuilding - Chez Vous', 'TeamBuilding - Chez Nous']
+
+};
+let lookupPrix = {
+   'Amateur': ['100'],
+   'Professionnel': ['800'],
+   'TeamBuilding': ['250']
+};
+let lookupDescription = {
+   'Amateur': ['Chocolatier Amateur - Démonstrations ou formations, nos différentes formules s’adaptent en fonction de vos envies. Nos chefs se font un plaisir de vous partager leurs secrets et astuces. Par groupe de huit personnes minimum, et en fonction de votre niveau (débutant ou initié), réalisez vous aussi de bons chocolat “made in Carrément Choc” et devenez un chef en quelques heures seulement!'],
+   'Professionnel': ['Masterclass - Nos formations, données par nos chocolatiers renommés, vous permettront de vous perfectionner et de découvrir les dernières recettes et tendances des plus Grands Chefs !'],
+   'TeamBuilding': ['TeamBuilding - Que vous souhaitiez remercier vos collaborateurs ou gâter vos meilleurs clients, notre équipe vous proposera l’offre la plus adaptée en fonction de vos besoins et de votre budget.']
+};
+
+// When an option is changed, search the above for matching choices
+$('#typesFormations').on('change', function() {
+   // Set selected option as variable
+   let selectValue = $(this).val();
+   // Empty the target field
+   $('#choicesFormations').empty();
+   
+   // For each chocie in the selected option
+   for (i = 0; i < lookup[selectValue].length; i++) {
+      // Output choice in the target field
+      $('#choicesFormations').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+   }
+
+   $('#descriptionsFormations').empty();
+   
+   // For each chocie in the selected option
+   for (i = 0; i < lookupDescription[selectValue].length; i++) {
+      // Output choice in the target field
+      $('#descriptionsFormations').append(lookupDescription[selectValue][i]);
+      $(".descriptionsFormations" ).text(lookupDescription[selectValue][i]);
+   }
+   $('#prixFormations').empty();
+
+   for (i = 0; i < lookupPrix[selectValue].length; i++) {
+      // Output choice in the target field
+      $('#prixFormations').append("<option value='" + lookupPrix[selectValue][i] + "'>" + lookupPrix[selectValue][i] + "</option>");
+      $(".prixFormations" ).text(lookupPrix[selectValue][i]);
+   }
+
+});
+
+$("#typesFormations").on("change",function() {
+    let valueType = $( this ).val();
+    $("#factureFormation" ).text('{{Formation sélectionnée}}');
+    $("#factureDevisFormation" ).text('{{Formation sélectionnée}}');
+
+    $(".nomFormation" ).text('{{$PRODUCTNAME$}}	');
+
+    $('#exportForm').hide()
+
+    //$('#prixFormations').append("<option value='' disabled='' selected=''>Sélectionner une option</option>");
+
+
+})
+
+$("#choicesFormations").on("change",function() {
+    let valueFormation = $( this ).val();
+    $("#factureFormation" ).text(valueFormation);
+    $(".nomFormation" ).text(valueFormation);
+
+})
+
+$("#participants").on("change",function(){
+    let valueParticipants = $( this ).val();
+    $(".quantiteFormations" ).text(valueParticipants);
+    $(".factureQuantite" ).text(valueParticipants);
+
+})
+/*
+$("#descriptionsFormations").on("keyup",function() {
+    let valueDescription = $( this ).val();
+    console.log(valueDescription)
+    $(".descriptionsFormations" ).text(valueDescription);
+
+})
+*/
+//$( "#myselect" ).val();
+
+/*
+$("#" ).on("keyup",function() {
+    let value = $( this ).val();
+    $("#facture" ).text(value);
+})
+*/
+
+
+
+// class="montantSansLaTva" -  montantTva -  montantAvecTva
+
+
+$('.message-devis').hide()
+
+
+$('#exportForm').click(function () {
+  let pdf = new jsPDF('a', 'mm', 'a4');
+  let firstPage;
+  //var secondPage;
+
+  html2canvas($('#first-page'), {
+    onrendered: function (canvas) {
+      firstPage = canvas.toDataURL('image/jpeg', 1.0);
+    } });
+
+
+
+
+/*
+  html2canvas($('#second-page'), {
+    onrendered: function (canvas) {
+      secondPage = canvas.toDataURL('image/jpeg', 1.0);
+    } });
+*/
+
+
+  setTimeout(function () {
+    pdf.addImage(firstPage, 'JPEG', 10, 10, 200, 0);
+    //pdf.addPage();
+    //pdf.addImage(secondPage, 'JPEG', 5, 5, 200, 0);
+    pdf.save("devis.pdf");
+  }, 150);
+});
+//# sourceURL=pen.js
+    </script>
+    <script src="./scripts/devis.js"></script>
+
+
+    <!--
+
+
+
+    <script>
+$('.message-devis').hide()
+
+$('#apercu').click(function () {
+
+  $('.message-devis').show()
+
+  let htmlFirstPage = $('#first-page').html()
+  let regex = /{{/;
+  $('.alert').hide()
+  if (regex.test(htmlFirstPage)) {
+    $('.alert-danger').show()
+    $('.message-devis-danger').text("Attention, il reste des caractères {{ }}. Merci de vérifier tous les champs.")
+
+    if ($('#factureFormation').text() == '{{Formation sélectionnée}}') {
+      $('.alert-info').show()
+      $('.message-devis-info').text("Vous devez choisir une formation précise. (Choix possibles *). Objet / Devis pour la formation : {{Formation sélectionnée}} ")
+    } else{
+
+      //
+        if ($('#factureParticipant').text() == '{{$PRODUCTQUANTITY$}}') {
+          $('.alert-warning').show()
+          $('.message-devis-warning').text("Merci d'indiquer le nombre de participants")
+        }
+
+        if ($('#factureParticipant').text() == '{{$PRODUCTQUANTITY$}}' && $('#factureProduct').text() == '{{$PRODUCTTOTAL$}}') {
+          $('.alert-warning').show()
+          $('.message-devis-warning').text("Merci d'indiquer le nombre de participants pour calculer le prix.")
+        }
+        else {
+          $('.alert-warning').hide()
+          $('.alert-danger').hide()
+       
+
+         $('.alert-success').show()
+         $('.message-devis-success').text("Vous pouvez générer le devis")
+
+        }
+
+      //
+
+    }
+
+    // fin else regex
+  } else{
+    //$('.alert-danger').hide()
+    
+    $('.alert-success').show()
+    $('.message-devis-success').text("Vous pouvez générer le devis")
+
+  }
+
+
+  // calcul prix
+
+  let nombreParticpant = $(".quantiteFormations").text()
+  let prixFormations = $(".prixFormations").text()
+
+  let montantSansLaTva = eval(nombreParticpant) * eval(prixFormations)
+  $('.montantSansLaTva').text(montantSansLaTva)
+
+  let montantTva = (montantSansLaTva * 21) / 100
+  $('.montantTva').text(montantTva)
+
+  let montantAvecTva = montantSansLaTva + montantTva
+  $('.montantAvecTva').text(montantAvecTva)
+
+  //alert("attention, il reste des caractères spéciaux {{ }}")
+
+
+});
+
+      
+    </script>
+    -->
+
+</body>
+</html>

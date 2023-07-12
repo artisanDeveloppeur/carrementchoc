@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de Style </title>
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <style>
+      
+    </style>
+
+</head>
+
+  <body class="styleguide">
+    <header class="styleguide__header">
+        <!-- Menu Hamburger / Croix -->
+        <div id="burger" class="styleguide__burger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h1 class="styleguide__title">Style Guide</h1>
+        <!-- Switch Dark / Light Mode -->      
+        <div class="theme__switch-wrapper">
+        <label class="theme__switch" for="checkboxMode">
+            <input type="checkbox" id="checkboxMode" />
+            <div class="slider round"></div>
+        </label>
+        <label >Mode</label>
+        </div>
+        <nav  class="styleguide__menu " >
+            <h2 class="h4">MENU DES MODULES</h2>
+           <ul>
+              <li><a href="#">Links</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <main >
+      <div class="modules__container">
+
+        <div class="divmodules" id="">
+          <div class="divmodules__title">
+              <h3 >Typographie</h3>
+          </div>
+          <div class="divmodules__bordure"></div>
+          <div class="divmodules__contenu">
+              <h1>Titre 1</h1>
+              <h2>Titre 2</h2>
+              <h3>Titre 3</h3>
+              <h4>Titre 4</h4>
+              <h5>Titre 5</h5>
+              <h6>Titre 6</h6>
+              <p>Le lorem ipsum (également appelé faux-texte, lipsum, ou bolo bolo1) est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</p>
+          </div>
+        </div>
+
+        <div class="divmodules" id="">
+          <div class="divmodules__title">
+              <h3 >Texte</h3>
+          </div>
+          <div class="divmodules__bordure"></div>
+          <div class="divmodules__contenu">
+  
+          </div>
+        </div>
+
+
+        <div class="divmodules" id="">
+          <div class="divmodules__title">
+              <h3 >Texte</h3>
+          </div>
+          <div class="divmodules__bordure"></div>
+          <div class="divmodules__contenu">
+  
+          </div>
+        </div>
+
+        <!-- fin modules__container -->
+      </div>
+    </main> 
+  <script src="scripts/domanimation.js"> </script>
+  <script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+
+console.log("DOM fully loaded and parsed");
+
+  let burger = document.querySelector("#burger")
+
+  burger.addEventListener("click", () =>{
+    burger.classList.toggle("open")
+
+  })
+
+  let menu = document.querySelector('.styleguide__menu')
+  burger.addEventListener("click",(event) => {
+    DOMAnimations.slideToggle(menu)
+    
+  })
+
+  let checkboxMode = document.querySelector('#checkboxMode')
+  checkboxMode.addEventListener("click", () =>{
+    document.body.classList.toggle("dark"); 
+  })
+});
+  </script>
+  </body>
+</html>

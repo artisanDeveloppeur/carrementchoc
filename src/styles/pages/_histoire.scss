@@ -1,0 +1,26 @@
+.grid.histoire {
+  gap: 2rem 2rem;
+  justify-items: center;
+
+
+}
+
+
+.grid.histoire div {
+  box-shadow: 0px 0px 55px 5px rgba(0, 0, 0, 0.06);
+
+}
+
+.grid.histoire div h3 {
+  text-transform: capitalize;
+  padding-inline: 1rem;
+}
+
+.grid.histoire div p {
+  padding-inline: 1rem;
+
+}
+
+.blog__section {
+  display: none;
+}

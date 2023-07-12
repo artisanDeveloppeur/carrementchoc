@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre école - Carrément Choc</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <!--
+      Menu d'accessibilité utiliser la tabulation
+    -->
+    <ul class="a11y-nav">
+        <li><a href="#main">Main</a></li>
+    </ul>
+    <header class="header">
+      <div >
+          <a class="header__logo" href="index.html"><img src="./images/carrement-choc.png" alt=""></a>
+      </div>
+      <nav class="menu menu-main menu-burger  m-visible s-visible xs-visible"  id="menu" >
+        <ul class="">
+          <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+          <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+          <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+          <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+        </ul>
+      </nav>
+      <span class="fill" style="width: 0%;"></span>
+      <nav class="menu-mobile" >
+        <div class="m-hide l-hide">
+            <div class="menu-slider" id="trigger">
+                <i class="fas fa-bars"> MENU</i>
+            </div>
+            <div id="triggered">
+                <ul class="triggered-link">
+                  <li class="txt-right d-flex flex-just-end"><i class="fas fa-times" id="close"></i></li>
+                  <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+                  <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+                  <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+                  <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+    <main id="main" class="main container-grid">
+      <section class="section__withhook">
+        <h1 class="main__title">Notre école</h1>
+        <p>Notre École prône la transmission des savoirs au travers de l’échange.  </p>
+        <p>Nous avons pour mission de mettre à l’honneur le chocolat de haute qualité, source de plaisir et d’émotions.</p>
+      </section>
+      <section class="section__withhook grid detail-formation">
+        <div class="col-xl-6 col-l-6 ">
+        <a href="academie-carrement-choc.html"><h3>Académie (amateurs)</h3></a>
+        <ul class="inherit">
+          <li>Démonstrations ou formations, nos différentes formules s’adaptent en fonction de vos envies.</li>
+          <li>Nos chefs se font un plaisir de vous partager leurs secrets et astuces</li>
+        </ul> 
+        </div>
+        <div class="col-xl-6 col-l-6 ">
+          <a href="masterclass-carrement-choc.html"><h3>Masterclass (professionnels)</h3></a>
+          <ul class="inherit">
+            <li>Nos formations vous permettront de découvrir les dernières recettes et tendances des plus Grands Chefs !</li>
+            <li>Idéales pour apprendre les spécificités d’un métier ou pour se perfectionner.</li>
+          </ul> 
+          </div>
+        </section>
+      <section class="section__withhook">
+        <h2 class="accroche">La science du chocolat</h2>
+        <div class="tab">
+          <nav-tabs class="nav-pills">
+            <a href="#tab1" aria-selected="true">Analyse sensorielle</a>
+            <a href="#tab2">Art de la dégustation</a>
+            <!--
+                          <a href="#tab3">Valeurs</a>
+            -->
+        </nav-tabs>
+        
+        <div>
+            <div id="tab1" hidden="hidden">
+                <h3>Les étapes de la méthode d’analyse sensorielle</h3>
+                <div class="grid notre-ecole">
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <i class=" fa fa-eye"></i>
+                        <h4>Regarder</h4>
+                        <p>La couleur du chocolat, le reflet, la brillance, les traces, les griffures...</p> 
+                    </div>
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <i class=" fa fa-wine-glass-alt"></i>
+                        <h4>Sentir</h4>
+                        <p>L'odeur du chocolat et percevoir les premiers arômes qui émanent.</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <i class=" fa fa-fingerprint"></i>
+                        <h4>Toucher</h4>
+                        <p>Pour analyser la texture du chocolat, fond-il ou reste-il de marbre...</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                      <i class=" fa fa-bell"></i>
+                      <h4>Écouter</h4>
+                      <p>Le son produit lors de la casse de votre tablette de chocolat...</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <i class=" fa fa-cookie-bite"></i>
+                        <h4>Goûter</h4>
+                        <p>Attaque et les notes aromatiques se dévoilent...</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <i class=" fa fa-brain"></i>
+                        <h4>Ressentir</h4>
+                        <p>La rétro-olfaction prolonge l'instant pour ne manquer aucune saveur.</p> 
+                  </div> 
+                </div>
+            </div>
+            <div id="tab2" hidden="hidden">
+                <h3>La maîtrise de l’art de la dégustation, avec nos nuanciers </h3>
+                <div class="tab-texte">
+                    <p>Nous appliquons une méthode de dégustation rigoureuse. </p>
+                    <p>La méthode vise à accorder du temps à l’instant de la dégustation. </p>
+                    <picture>
+                      <img src="images/nuancier-1.png">
+                      <img src="images/nuancier-2.png" class="mobile-tab-img"> 
+                      <!--
+                      <img src="images/nuancier-3.png">  
+                      -->
+                    </picture>
+                    <p>L’objectif est de parvenir à mettre des mots sur ce que l’on déguste. </p>
+                    <p>Le chocolat est aussi diversifié que le vin en terme aromatique.</p>
+                    <p>Chaque chocolat offre un bouquet d’arômes uniques. Chaque chocolat est une surprise, un trésor à dévoiler… </p>
+                </div>
+       
+            
+              </div>
+              <!--
+
+              <div id="tab3">
+                <h3>L’expertise du chocolat : notre savoir-faire de chocolatier</h3>
+                <p>Chez Carrément Choc, nous élaborons de nouvelles collections et développons des recettes inédites chaque année. </p>
+                <p>Créés dans le respect des méthodes traditionnelles artisanales belges avec des matières premières de très haute qualité, nos chocolats aux parfums équilibrés sont nés de notre savoir-faire et expérience en chocolaterie. </p>
+                <p>Nous mettons au point chaque année de nouveaux produits chocolatés qui viennent compléter notre gamme : tablettes, ganaches et pralinés, gourmandises, fruits secs enrobés, barres gourmandes…</p>
+                <p>Carrément Choc met un point d’honneur à se renouveler pour vous offrir le meilleur chocolat,  source d’émotions, de gourmandise et de moments de bien-être.</p>
+                <h3>Nos valeurs</h2>
+                <div class="grid notre-ecole">
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <h4>Excellence</h4>
+                        <p>L’Expertise voit converger des domaines vastes qui vont de la culture du cacao à la dégustation du chocolat.</p> 
+                    </div>
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <h4>Plaisir</h4>
+                        <p>Nous vous offrons le meilleur du chocolat, source  de gourmandise et de moments de bien-être.​</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <h4>Partage</h4>
+                        <p>La transmission des savoirs est au coeur de notre démarche </p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                      <h4>Qualité</h4>
+                      <p>Nous ne cessons de réinventer nos offres pour trouver le mariage parfait, la texture idéale…</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <h4>Accompagnement</h4>
+                        <p>Quelque soit votre demande, nous restons à votre écoute.</p> 
+                    </div> 
+                    <div class="col-xl-4 col-l-4 col-m-6 col-xs-12">
+                        <h4>Nouveauté</h4>
+                        <p>Chaque année de nouvelles recettes de bonbons de chocolat dans le respect des méthodes traditionnelles artisanale.</p> 
+                    </div> 
+                  </div>
+              </div>
+              -->
+
+        </div>
+        
+      </section>
+
+    </main>
+    <footer class="footer__container ">
+        
+      <section class="footer__bottom grid">
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+              <h4>carrément choc</h4>
+              <nav>
+                <ul>
+                  <li><a href="notre-histoire.html">notre histoire</a></li>
+                  <li><a href="nos-chocolats-degustations.html">nos chocolats</a></li>
+                  <li><a href="notre-savoir-faire.html">notre savoir faire</a></li>
+                  <li><a href="notre-concept-bean-to-bar.html">notre concept</a></li>
+                  <li><a href="nos-planteurs-et-leurs-plantations.html">nos planteurs</a></li>
+                  <li><a href="#">notre engagement</a></li>
+                  <li><a href="#">nos partenaires</a></li>
+              </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>notre école</h4>
+            <nav>
+              <ul>
+                <li><a href="notre-ecole-chocolat.html">la chocolatologie</a></li>
+                <li><a href="academie-carrement-choc.html">amateur</a></li>
+                <li><a href="masterclass-carrement-choc.html">professionnel</a></li>
+                <li><a href="#">team building</a></li>
+                <li><a href="#">corporate</a></li>
+                <li><a href="#">portraits des chefs</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+                <!--
+                <li><a href="#">lexique chocolat</a></li>
+                --> 
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>nos artisans</h4>
+            <nav>
+              <ul>
+                <li><a href="artisans-certifies.html#boulangerie">boulangerie</a></li>
+                <li><a href="artisans-certifies.html#viennoiserie">viennoiserie</a></li>
+                <li><a href="artisans-certifies.html#tarterie">tarterie</a></li>
+                <li><a href="artisans-certifies.html#patisserie">pâtisserie</a></li>
+                <li><a href="artisans-certifies.html#biscuiterie">biscuiterie</a></li>
+                <li><a href="artisans-certifies.html#glacerie">glacerie</a></li>
+                <li><a href="trouver-artisan-certifie.html">trouver un artisan</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!--
+          <div class="col-xl-2 col-l-6 col-m-6">
+            <h4>corporate</h4>
+            <nav>
+              <ul>
+                <li><a href="#">cadeaux d'entreprises</a></li>
+                <li><a href="#">événements</a></li>
+                <li><a href="#">distribution horeca</a></li>
+                <li><a href="#">revendeurs</a></li>
+                <li><a href="#">personnalisation</a></li>
+                <li><a href="#">projets sur mesure</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+              </ul>
+            </nav>
+          </div>
+          footer__informations col-xl-4 col-l-12 col-m-12"
+          class=" footer__informations col-xl-3 col-l-12 col-m-12"
+          -->
+          <div class=" footer__informations col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>informations</h4>
+            <nav>
+              <ul>
+                <li><a href="#"><i class="fa-solid fa-house-chimney"></i>carrément choc</a></li>
+                <li><a href="#"><i class="fa-solid fa-location-dot"></i>Atelier, Rue de (ville)</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar"></i>Ouvert de mardi au samedi </a></li>
+                <li><a href="#"><i class="fa-solid fa-clock"></i>Horaire, de 9h à 18h</a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i>+32 (0)123 45 67 89</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i>Contactez-nous</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i>BE 9876.543.210</a></li>
+              </ul>
+            </nav>
+          </div>
+      </section>
+  </footer>
+  <scroll-top class="scroll-top" style="display: grid;">
+    <svg width="100%" height="100%" viewBox="0 0 7 5" xmlns="http://www.w3.org/2000/svg" style="stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5; fill: none;">
+      <path d="M1,4l2.5,-3l2.5,3" stroke="#FFF" stroke-width="1.4"></path>
+    </svg>
+  </scroll-top>
+  <script src="./scripts/menu.js"></script>
+  <script src="./scripts/scrolltop.js"></script>
+  <script src="./scripts/tabs.js"></script>
+</body>
+</html>

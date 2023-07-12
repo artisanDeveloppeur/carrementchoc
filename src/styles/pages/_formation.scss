@@ -1,0 +1,61 @@
+.formations-presentation {
+  display: grid;
+  align-content: center;
+}
+
+.ca-consiste {
+  //width: 400px;
+  padding-inline: 2rem;
+  box-shadow: 0px 0px 55px 5px rgba(0, 0, 0, 0.06)
+}
+
+.infos-pratiques {
+  background-color: #fff9f5;
+  //width: 400px;
+  padding-inline: 2rem;
+
+
+}
+
+.infos-pratiques li {
+  padding-block: 0.5rem;
+}
+
+
+
+.plaisir-apprendre div {
+  width: 300px;
+  background-color: #fff9f5;
+  padding-inline: 2rem;
+  padding-block: 2rem;
+}
+
+.plaisir-apprendre picture {
+  height: 236px;
+}
+
+.plaisir-apprendre picture img {
+  width: 100%;
+}
+
+.plaisir-apprendre div h3 {
+  font-size: 1.15rem;
+
+}
+
+.plaisir-apprendre div p {}
+
+
+.detail-formation div {
+  background-color: #fff9f5;
+  padding-inline: 2rem;
+  border: 2px solid #D6A461;
+}
+
+.detail-formation li {
+  padding-block: 0.5rem;
+}
+
+.detail-formation {
+  padding-block: 2rem;
+}

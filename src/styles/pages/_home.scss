@@ -1,0 +1,13 @@
+.blog {
+
+  &__section {
+    margin-block: 3rem;
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    margin-block: 2rem;
+  }
+}

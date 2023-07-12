@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterclass - Carrément Choc</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!--
+      Menu d'accessibilité utiliser la tabulation
+    -->
+    <ul class="a11y-nav">
+        <li><a href="#main">Main</a></li>
+    </ul>
+    <header class="header">
+      <div >
+          <a class="header__logo" href="index.html"><img src="./images/carrement-choc.png" alt=""></a>
+      </div>
+      <nav class="menu menu-main menu-burger  m-visible s-visible xs-visible"  id="menu" >
+        <ul class="">
+          <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+          <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+          <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+          <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+        </ul>
+      </nav>
+      <span class="fill" style="width: 0%;"></span>
+
+      <nav class="menu-mobile" >
+        <div class="m-hide l-hide">
+            <div class="menu-slider" id="trigger">
+                <i class="fas fa-bars"> MENU</i>
+            </div>
+            <div id="triggered">
+                <ul class="triggered-link">
+                  <li class="txt-right d-flex flex-just-end"><i class="fas fa-times" id="close"></i></li>
+                  <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+                  <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+                  <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+                  <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+    <main id="main" class="main ">
+      <section class="section__withhook">
+        <div class="grid">
+          <picture class="col-xl-6 col-l-6"><img src="./images/masterclass.png" ></picture>
+          <div class="col-xl-6 col-l-6 formations-presentation">
+            <h1 class="main__title">Masterclass</h1>
+            <p>Uniquement pour les professionnels</p>
+            <p>Nos formations vous permettront de découvrir les dernières recettes et tendances des plus Grands Chefs !</p>
+            <p>Idéales pour apprendre les spécificités d’un métier ou pour se perfectionner.</p> 
+          </div>
+        </div> 
+      </section> 
+      <section class="section__withhook">
+        <h2 class="accroche">un pro au services des pros</h2>
+        <div class="grid" >
+          <div class="col-xl-6 col-l-6 ca-consiste" >
+            <h3>En quoi ça consiste ?</h3>
+            <p>Ces cours s’adressent uniquement  aux professionnels qui travaillent dans le secteur des métiers de bouche et aux experts de la gastronomie</p>
+            <p>Nous répondons aux demandes et aux besoins de nos clients de façon personnalisée,  afin de vous permettre d’atteindre vos objectifs, quels qu’ils soient.</p>
+            
+          </div>
+          <div class="col-xl-6 col-l-6 infos-pratiques">
+            <h3>Infos pratiques</h3>
+            <ul class="inherit">
+              <li>Prix : 800€</li>
+              <li>la formation (8h/jour)</li>
+              <li>la mise à disposition du matériel & matières premières</li>
+              <li>le support recette Masterclass</li>
+              <li>la dégustation du chocolat, selon notre approche</li>
+            </ul> 
+          </div>
+        </div>
+      </section>
+      <section class="section__withhook formations-container">
+        <h2 >Nos formations</h2>
+         <div class="grid plaisir-apprendre" >
+           <div class="col-xl-4 col-l-4  col-m-6" >
+               <picture><img src="./images/pralines-moulees.png" ></picture>
+               <h3>Initiation à la chocolaterie</h3>
+               <p>Aborder toutes les bases de la chocolaterie, du tempérage au moulage.</p>
+               <p><a href="detail-formation-carrement-choc.html" class="cta">Plus de détails</a></p>
+
+           </div>
+           <div class="col-xl-4 col-l-4  col-m-6">
+             <picture><img src="./images/techno-tactile-chocolaterie.png" ></picture>
+               <h3>Techno-Tactile Chocolaterie</h3>
+               <p>Mieux comprendre l’impact des ingrédients qui composent le chocolat</p>
+               <p><a href="detail-formation-carrement-choc.html" class="cta">Plus de détails</a></p>
+           </div>
+           <div class="col-xl-4 col-l-4  col-m-6">
+             <picture><img src="./images/pralines-enrobees.png" ></picture>
+               <h3>Perfectionnement</h3>
+               <p>Réalisation de recettes de bonbons de chocolat (pralinés, ganaches à cadrer).</p>
+               <p><a href="detail-formation-carrement-choc.html" class="cta">Plus de détails</a></p>
+           </div>
+         </div>
+    </section>
+    </main>
+    <footer class="footer__container ">
+        
+      <section class="footer__bottom grid">
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+              <h4>carrément choc</h4>
+              <nav>
+                <ul>
+                  <li><a href="notre-histoire.html">notre histoire</a></li>
+                  <li><a href="nos-chocolats-degustations.html">nos chocolats</a></li>
+                  <li><a href="notre-savoir-faire.html">notre savoir faire</a></li>
+                  <li><a href="notre-concept-bean-to-bar.html">notre concept</a></li>
+                  <li><a href="nos-planteurs-et-leurs-plantations.html">nos planteurs</a></li>
+                  <li><a href="#">notre engagement</a></li>
+                  <li><a href="#">nos partenaires</a></li>
+              </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>notre école</h4>
+            <nav>
+              <ul>
+                <li><a href="notre-ecole-chocolat.html">la chocolatologie</a></li>
+                <li><a href="academie-carrement-choc.html">amateur</a></li>
+                <li><a href="masterclass-carrement-choc.html">professionnel</a></li>
+                <li><a href="#">team building</a></li>
+                <li><a href="#">corporate</a></li>
+                <li><a href="#">portraits des chefs</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+                <!--
+                <li><a href="#">lexique chocolat</a></li>
+                --> 
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>nos artisans</h4>
+            <nav>
+              <ul>
+                <li><a href="artisans-certifies.html#boulangerie">boulangerie</a></li>
+                <li><a href="artisans-certifies.html#viennoiserie">viennoiserie</a></li>
+                <li><a href="artisans-certifies.html#tarterie">tarterie</a></li>
+                <li><a href="artisans-certifies.html#patisserie">pâtisserie</a></li>
+                <li><a href="artisans-certifies.html#biscuiterie">biscuiterie</a></li>
+                <li><a href="artisans-certifies.html#glacerie">glacerie</a></li>
+                <li><a href="trouver-artisan-certifie.html">trouver un artisan</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!--
+          <div class="col-xl-2 col-l-6 col-m-6">
+            <h4>corporate</h4>
+            <nav>
+              <ul>
+                <li><a href="#">cadeaux d'entreprises</a></li>
+                <li><a href="#">événements</a></li>
+                <li><a href="#">distribution horeca</a></li>
+                <li><a href="#">revendeurs</a></li>
+                <li><a href="#">personnalisation</a></li>
+                <li><a href="#">projets sur mesure</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+              </ul>
+            </nav>
+          </div>
+          footer__informations col-xl-4 col-l-12 col-m-12"
+          class=" footer__informations col-xl-3 col-l-12 col-m-12"
+          -->
+          <div class=" footer__informations col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>informations</h4>
+            <nav>
+              <ul>
+                <li><a href="#"><i class="fa-solid fa-house-chimney"></i>carrément choc</a></li>
+                <li><a href="#"><i class="fa-solid fa-location-dot"></i>Atelier, Rue de (ville)</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar"></i>Ouvert de mardi au samedi </a></li>
+                <li><a href="#"><i class="fa-solid fa-clock"></i>Horaire, de 9h à 18h</a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i>+32 (0)123 45 67 89</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i>Contactez-nous</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i>BE 9876.543.210</a></li>
+              </ul>
+            </nav>
+          </div>
+      </section>
+  </footer>
+  <scroll-top class="scroll-top" style="display: grid;">
+    <svg width="100%" height="100%" viewBox="0 0 7 5" xmlns="http://www.w3.org/2000/svg" style="stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5; fill: none;">
+      <path d="M1,4l2.5,-3l2.5,3" stroke="#FFF" stroke-width="1.4"></path>
+    </svg>
+  </scroll-top>
+  <script src="./scripts/menu.js"></script>
+  <script src="./scripts/scrolltop.js"></script>
+</body>
+</html>

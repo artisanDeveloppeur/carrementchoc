@@ -1,0 +1,170 @@
+.main {
+  padding-block: 0rem;
+
+  &__section {
+    margin-inline: 10rem;
+  }
+
+  &__title {
+    display: flex;
+    //justify-content: center;
+    margin-block: 3rem;
+    text-transform: capitalize;
+
+  }
+}
+
+.accroche {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 18px;
+  text-transform: uppercase;
+  margin-block: 2rem;
+}
+
+.section__withhook {
+  width: 900px;
+  margin: auto;
+  //display: grid;
+  //justify-content: center;
+
+}
+
+@media (max-width: 1000px) {
+
+  .section__withhook {
+    width: 600px;
+
+  }
+}
+
+@media (max-width: 760px) {
+
+  .section__withhook {
+    width: 300px;
+
+  }
+
+
+}
+
+/*
+.banniere__container {
+  display: grid;
+  border: 2px solid grey;
+
+  h4,
+  p {}
+
+  h4 {
+    border: 1px solid grey;
+  }
+
+  p {
+    border: 1px solid grey;
+  }
+
+  picture {
+    width: 100%;
+  }
+}
+*/
+.top-banner-section {
+  display: grid;
+  grid-template-columns: 1fr; // stretch to the full frame
+  grid-template-rows: 350px; // 350 pixels tall
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-content: center;
+  justify-content: center;
+
+  .banner-image-div {
+    grid-area: 1 / 1 / 2 / 2;
+
+  }
+
+  // image
+  .banner-overlay-div {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  // gradient or other overlay
+  .banner-text-div {
+    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1/1/2/2;
+    z-index: 1;
+    justify-content: center;
+    display: grid;
+    align-content: center;
+  }
+
+  .banner-text-div h4.alternate {
+    color: #000000;
+  }
+
+  .banner-text-div a.alternate {
+    //color: #000000;
+    //border: 1px solid #000000;
+  }
+
+  .banner-text-div h4 {
+    font-size: 40px;
+    line-height: 40px;
+    color: #fff;
+    margin-bottom: 33px;
+    text-align: center;
+    font-style: italic;
+
+  }
+
+  .banner-text-div a {
+    border: 1px solid grey;
+    background: transparent;
+    text-transform: uppercase;
+
+    margin-block: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 246px;
+    padding: 16px 42px;
+    border: 1px solid white;
+    color: white
+  }
+
+  // overlay objects like text, buttons, etc.
+}
+
+// Banner image (layer 1)
+.banner-image {
+  display: grid;
+  min-width: 350px; // Do not resize to smaller than this.
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Using this so the image can be any size and still look halfway decent.
+}
+
+
+.top-banner-section .banner-text-div a {
+
+  color: #D6A461;
+  border: 3px solid #D6A461;
+  background: #462425;
+  opacity: 0.7;
+
+  //background: #D6A461;
+  //opacity: 0.8;
+
+}
+
+
+.top-banner-section .banner-text-div a:hover {
+
+  color: #D6A461;
+  border: 5px solid #D6A461;
+  opacity: 0.9;
+  text-decoration: none;
+}

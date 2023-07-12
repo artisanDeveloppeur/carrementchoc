@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Savoir Faire - Carrément Choc</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!--
+      Menu d'accessibilité utiliser la tabulation
+    -->
+    <ul class="a11y-nav">
+        <li><a href="#main">Main</a></li>
+    </ul>
+    <header class="header">
+      <div >
+          <a class="header__logo" href="index.html"><img src="./images/carrement-choc.png" alt=""></a>
+      </div>
+      <nav class="menu menu-main menu-burger  m-visible s-visible xs-visible"  id="menu" >
+        <ul class="">
+          <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+          <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+          <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+          <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+        </ul>
+      </nav>
+      <span class="fill" style="width: 0%;"></span>
+
+      <nav class="menu-mobile" >
+        <div class="m-hide l-hide">
+            <div class="menu-slider" id="trigger">
+                <i class="fas fa-bars"> MENU</i>
+            </div>
+            <div id="triggered">
+                <ul class="triggered-link">
+                  <li class="txt-right d-flex flex-just-end"><i class="fas fa-times" id="close"></i></li>
+                  <li><a href="index.html" role="tab" class="menu-link" title="">carrément choc</a></li>
+                  <li><a href="notre-ecole-chocolat.html" role="tab" class="menu-link" title="">notre école</a></li>
+                  <li><a href="artisans-certifies.html" role="tab" class="menu-link" title="">nos artisans</a></li>
+                  <li><a href="#" role="tab" class="menu-link" title="">(eshop)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+    <main id="main" class="main container-grid">
+      <section class="section__withhook">
+        <h1 class="main__title">Notre savoir faire</h1>
+        <p>Le chocolat est issu de la fève du cacaotier un petit arbre tropical qui requiert des conditions de culture bien particulières pour prospérer.</p>
+        <p>De nombreuses opérations sont nécessaires à l'élaboration du cacao qui sera la base de tous les chocolats.</p>  
+        <p>C’est un arbre qui fleurit toute l’année. Ses fleurs poussent directement sur le tronc et les plus grosses branches donnent des fruits, les cabosses.</p>
+      </section> 
+      <section class="section__withhook">
+        <h2 class="accroche">De l'arbre cacaoyer au chocolat</h2>
+        <div class=" grid grid-noGap duos "> 
+            <div class="duosA col-xl-6 col-l-6 col-m-6">
+                <picture><img src="./images/processus-fabrication.png" alt=""/></picture>  
+            </div>
+            <div class="duosB col-xl-6 col-l-6 col-m-6"> 
+                <h3>De l'arbre à la fève</h3>
+                <p>De l'arbre à la fève (tree-to-bean) et de la fève à la tablette (bean-to-bar).</p>
+                <p>Comment la fève se transforme-t-elle en chocolat ?</p> 
+                <p><a href="#modal1" class="js-modal">Les étapes de fabrication du chocolat</a></p>
+                <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
+                    <div class="modal-wrapper js-modal-stop">
+                        <button class="js-modal-close">Fermer la boite modale</button>
+                        <h4 id="titlemodal">Les étapes de fabrication du chocolat</h4>
+                        <picture><img src="./images/bean-to-bar-fr.png"></picture> 
+                    </div>
+                </aside>
+              </div>
+            <div  class="duosC col-xl-6 col-l-6 col-m-6"> 
+                <a href="#" class="tooltip" title="La récolte des cabosses" data-tooltip="#tooltip-recolte"><h3>Récolte <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-recolte">
+                    <h4>La récolte des cabosses</h4>
+                    <p>Tout commence grâce à un arbre très particulier et exigeant : le cacaoyer.</p>
+                    <p>La particularité du cacaoyer est que ses fruits appelés cabosses poussent à même le tronc. La première étape consiste donc à trancher le pédoncule reliant la cabosse à l’arbre.</p>
+                    <p>C’est grâce à ces cabosses et des graines qu’elles contiennent qu’il est possible de fabriquer du chocolat, mais le travail reste encore long.</p>
+                  </div>
+                </div>
+                <!-- -->
+                <p>Découvrez les étapes cruciales et tout le travail apporté par nos planteurs et nos artisans afin de sublimer ce produit exceptionnel.</p>
+                <p>Les récoltes de cabosses ont lieu 2 fois par an, au printemps et à l’automne.</p> 
+            </div>
+            <div class="duosD col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/recolte.png" alt=""/></picture>
+            </div>
+            <div class="duosE col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/ecabossage.png" alt=""/></picture>  
+            </div>
+            <div class="duosF col-xl-6 col-l-6 col-m-6"> 
+                
+                <a href="#" class="tooltip" title="L'écabossage du cacao" data-tooltip="#tooltip-ecabossage"><h3>Écabossage <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-ecabossage">
+                    <h4>L'écabossage du cacao</h4>
+                    <p>La seconde étape consiste à ouvrir les cabosses afin de récolter ses graines : c’est ce que l’on appelle l’écabossage et il a lieu très peu de temps après la récolte.</p>
+                    <p>À l’aide d’une machette, la cabosse est fendue puis ouverte en deux, afin de récupérer ce qu’elle contient : des graines recouvertes d’une pulpe blanchâtre que l’on appelle placenta ou mucilage. Ce sont ces graines qui nous intéressent, afin de passer à la prochaine étape.</p>
+                  </div>
+                </div>
+                <!-- -->  
+                <p>Les cabosses sont ouvertes à la machette et contiennent le « miel de cacao ».</p>
+                <p>On vous le fait déguster sur place ainsi qu’une pulpe enveloppant les fèves, appelée le mucilage. Les prémices des arôme</p>           
+            </div>            
+            <div class="duosG col-xl-6 col-l-6 col-m-6">
+                
+                <a href="#" class="tooltip" title="La fermentation des fèves de cacao" data-tooltip="#tooltip-fermentation"><h3>Fermentation <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-fermentation">
+                    <h4>La fermentation des fèves de cacao</h4>
+                    <p>Une fois récoltées, les graines sont entreposées dans de grands paniers en bois pendant une semaine afin de stopper la germination : on dit alors qu’elles fermentent. La pulpe blanche se dégrade alors peu à peu.</p>
+                    <p>La pulpe entourant les graines est composée de levures, de sucres et de bactéries. Lors de la fermentation, les levures consomment le sucre afin de créer de l’alcool. Ce sont ensuite les bactéries qui consomment l’alcool créant ainsi de l’acide acétique.</p>
+                  </div>
+                </div>
+                <!-- -->  
+                <p>Ce procédé dure entre 4 et 7 jours et se fait dans des cuves recouvertes de feuilles de bananiers pour faire augmenter la température à l’intérieur.</p>
+                <p>La pulpe devient alcool et les fèves prennent leurs arômes de cacao. Moment crucial, minuté et délicat qui détermine toute la concentration aromatique du cacao.</p>      
+            </div>    
+            <div class="duosH col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/fermentation.png" alt=""/></picture> 
+            </div>
+            <div class="duosI col-xl-6 col-l-6 col-m-6">
+              <picture><img src="./images/sechage.png" alt=""/></picture>  
+            </div>
+            <div id="biscuiterie" class="duosJ col-xl-6 col-l-6 col-m-6"> 
+                   
+                <a href="#" class="tooltip" title="Le séchage des fèves de cacao" data-tooltip="#tooltip-sechage"><h3>Séchage <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-sechage">
+                    <h4>Le séchage des fèves de cacao</h4>
+                    <p>Après la fermentation, les fèves sont pleines d’humidité. Pour éviter qu’elles pourrissent, il est alors nécessaire de les faire sécher soit en plein soleil durant 14 jours ou alors grâce à un courant d’air chaud qui permet d’accélérer le processus bien que ce soit plus coûteux.</p>
+                    <p>Après séchage, les fèves sont prêtes pour être exportées.</p>
+                  </div>
+                </div>
+                <!-- -->  
+                <p>Les fèves sont séchées au soleil afin de descendre leur taux d’humidité entre 3 et 7%.</p>
+                <p>C’est à nouveau une étape délicate et décisive car il faut les sécher suffisamment pour ne pas qu’elles pourrissent et pas trop pour ne pas les torréfier.</p>      
+            </div>
+            <div class="duosK col-xl-6 col-l-6 col-m-6"> 
+                <a href="#" class="tooltip" title="Le tri et calibrage des fèves de cacao" data-tooltip="#tooltip-tri"><h3>Triage & Calibrage <i class="fa-solid fa-circle-question"></i></h3></a>
+                <div>                
+                  <div style="display:none;" id="tooltip-tri">
+                    <h4>Le tri et calibrage des fèves de cacao</h4>
+                    <p>Enfin l'heure de vérité. Lorsque les fèves sont sèches, les ouvriers apportent leur précieuse récolte dans un centre de collecte où les fèves sont évaluées.</p>
+                    <p>Les fèves plates ou malingres seront destinées à finir sans gloire dans la poudre et le beurre de cacao.</p>
+                    <p>Les fèves bien dodues seront mises en sac de 50, 60 ou 70 kg pour être expédiées aux grands maîtres torréfacteurs de la chocolaterie comme on le fait pour le café.</p>
+                  </div>
+                </div>
+                <!-- -->     
+                <p>Les fèves moisies et abîmées sont sorties des lots.</p>
+                <p>Les autres sont emballées dans des sacs et transportées vers les pays producteurs.</p>      
+            </div>
+            <div class="duosL col-xl-6 col-l-6 col-m-6" >
+              <picture><img src="./images/triage-calibrage.png" alt=""/></picture>
+            </div>
+        </div>
+      </section>
+    </main>
+    <section class="banniere__container top-banner-section">
+      <span class="banner-text-div">
+        <p ><a href="notre-concept-bean-to-bar.html" class="alternate">Notre concept Bean To Bar</a></p>
+      </span> 
+      <picture class="banner-image-div"><img  class="banner-image" src="./images/banniere-savoir-faire.png" alt=""/></picture>
+    </section>
+    <footer class="footer__container ">
+        
+      <section class="footer__bottom grid">
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+              <h4>carrément choc</h4>
+              <nav>
+                <ul>
+                  <li><a href="notre-histoire.html">notre histoire</a></li>
+                  <li><a href="nos-chocolats-degustations.html">nos chocolats</a></li>
+                  <li><a href="notre-savoir-faire.html">notre savoir faire</a></li>
+                  <li><a href="notre-concept-bean-to-bar.html">notre concept</a></li>
+                  <li><a href="nos-planteurs-et-leurs-plantations.html">nos planteurs</a></li>
+                  <li><a href="#">notre engagement</a></li>
+                  <li><a href="#">nos partenaires</a></li>
+              </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>notre école</h4>
+            <nav>
+              <ul>
+                <li><a href="notre-ecole-chocolat.html">la chocolatologie</a></li>
+                <li><a href="academie-carrement-choc.html">amateur</a></li>
+                <li><a href="masterclass-carrement-choc.html">professionnel</a></li>
+                <li><a href="#">team building</a></li>
+                <li><a href="#">corporate</a></li>
+                <li><a href="#">portraits des chefs</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+                <!--
+                <li><a href="#">lexique chocolat</a></li>
+                --> 
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>nos artisans</h4>
+            <nav>
+              <ul>
+                <li><a href="artisans-certifies.html#boulangerie">boulangerie</a></li>
+                <li><a href="artisans-certifies.html#viennoiserie">viennoiserie</a></li>
+                <li><a href="artisans-certifies.html#tarterie">tarterie</a></li>
+                <li><a href="artisans-certifies.html#patisserie">pâtisserie</a></li>
+                <li><a href="artisans-certifies.html#biscuiterie">biscuiterie</a></li>
+                <li><a href="artisans-certifies.html#glacerie">glacerie</a></li>
+                <li><a href="trouver-artisan-certifie.html">trouver un artisan</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!--
+          <div class="col-xl-2 col-l-6 col-m-6">
+            <h4>corporate</h4>
+            <nav>
+              <ul>
+                <li><a href="#">cadeaux d'entreprises</a></li>
+                <li><a href="#">événements</a></li>
+                <li><a href="#">distribution horeca</a></li>
+                <li><a href="#">revendeurs</a></li>
+                <li><a href="#">personnalisation</a></li>
+                <li><a href="#">projets sur mesure</a></li>
+                <li><a target="_blank" href="devis-pdf.html">devis</a></li>
+              </ul>
+            </nav>
+          </div>
+          footer__informations col-xl-4 col-l-12 col-m-12"
+          class=" footer__informations col-xl-3 col-l-12 col-m-12"
+          -->
+          <div class=" footer__informations col-xl-3 col-l-6 col-m-6 col-xs-12">
+            <h4>informations</h4>
+            <nav>
+              <ul>
+                <li><a href="#"><i class="fa-solid fa-house-chimney"></i>carrément choc</a></li>
+                <li><a href="#"><i class="fa-solid fa-location-dot"></i>Atelier, Rue de (ville)</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar"></i>Ouvert de mardi au samedi </a></li>
+                <li><a href="#"><i class="fa-solid fa-clock"></i>Horaire, de 9h à 18h</a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i>+32 (0)123 45 67 89</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i>Contactez-nous</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i>BE 9876.543.210</a></li>
+              </ul>
+            </nav>
+          </div>
+      </section>
+  </footer>
+  <scroll-top class="scroll-top" style="display: grid;">
+    <svg width="100%" height="100%" viewBox="0 0 7 5" xmlns="http://www.w3.org/2000/svg" style="stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5; fill: none;">
+      <path d="M1,4l2.5,-3l2.5,3" stroke="#FFF" stroke-width="1.4"></path>
+    </svg>
+  </scroll-top>
+  <script src="./scripts/menu.js"></script>
+  <script src="./scripts/scrolltop.js"></script>
+  <script src="scripts/modals.js"> </script>
+  <script src="scripts/tooltip.js"> </script>
+</body>
+</html>
