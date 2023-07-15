@@ -15,11 +15,10 @@ class GoogleMap {
     //Uncaught (in promise) ReferenceError: google is not defined
 
 
-    // key=AIzaSyAdfipYKTyWEiJXhGSRos_HxVAaEcUQyuw
 
 
     return new Promise((resolve, reject) => {
-      $script('https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfipYKTyWEiJXhGSRos_HxVAaEcUQyuw', () => {
+      $script('https://maps.googleapis.com/maps/api/js', () => {
         this.textMarker = class TextMarker extends google.maps.OverlayView {
 
           constructor(pos, map, text) {
